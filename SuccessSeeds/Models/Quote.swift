@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct Quote {
+    let message: String
+}

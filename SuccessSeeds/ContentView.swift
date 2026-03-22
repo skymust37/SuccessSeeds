@@ -4,18 +4,26 @@
 //
 //  Created by 김승현 on 3/2/26.
 //
-
 import SwiftUI
+
+let gradientColors: [Color] = [
+    .gradientTop,
+    .gradientBottom
+]
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            TabView {
+                Welcomepage()
+                
+                FeaturesPage()
+            }
+            .background(Gradient(colors: gradientColors))
+            
+            .tabViewStyle(.page)
         }
-        .padding()
+        
     }
 }
 

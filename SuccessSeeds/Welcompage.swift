@@ -7,12 +7,40 @@
 
 import SwiftUI
 
-struct Welcompage: View {
+struct Welcomepage: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            ZStack {
+                RoundedRectangle(cornerRadius: 30)
+                    .frame(width: 150, height: 150)
+                    .foregroundStyle(.tint)
+                
+                Image(systemName: "figure.hiking")
+                    .font(.system(size: 70))
+                    .foregroundStyle(.white)
+            }
+            
+            Text("Welcome to Success Seeds")
+                .font(.title)
+                .fontWeight(.semibold)
+                .padding(.top)
+            
+            Text("당신과 함께 성장하는 지혜의 한 줄.")
+                .font(.title2)
+                .multilineTextAlignment(.center)
+            
+            NavigationLink(destination: QuoteView()) {
+                Text("시작하기")
+            }
+            .buttonStyle(.glassProminent)
+            .padding()
+            .font(.title3)
+        }
+        .padding()
     }
 }
 
 #Preview {
-    Welcompage()
+    Welcomepage()
 }
+

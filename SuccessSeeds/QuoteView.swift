@@ -8,9 +8,20 @@
 import SwiftUI
 
 struct QuoteView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+    @StateObject private var viewModel = QuoteViewModel()
+        
+        var body: some View {
+            VStack(spacing: 20) {
+                Text(viewModel.selectedQuote.message)
+                    .font(.title)
+                    .padding()
+                
+                Button("Roll") {
+                    viewModel.rollQuote()
+                }
+                .buttonStyle(.borderedProminent)
+            }
+        }
 }
 
 #Preview {
